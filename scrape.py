@@ -42,9 +42,14 @@ def scrape_gamelog(driver, gamelog_link):
     html = lxml.html.fromstring(driver.page_source)
     for school_link in html.xpath(
             "//table[@id='stats_basic']//a[contains(@href, '/cbb/schools/')]"):
-        school_name_map[school_link.text.strip()] = (
-            re.search('/cbb/schools/([a-z-]+)/', school_link.attrib['href'])
-            .group(1))
+        try:
+            school_name_map[school_link.text.strip()] = (
+                re.search('/cbb/schools/([a-z-]+)/', school_link.attrib['href'])
+                .group(1))
+        except:
+            print repr(school_link.text)
+            print school_link.attrib['href']
+            raise
     (driver
         .find_element_by_xpath("//span[contains(@onclick, 'table2csv')]")
         .click())
