@@ -24,7 +24,7 @@ school_relative_links = (
     set(html.xpath("//td[text() = '2016']/parent::tr//a/@href"))
     .difference(['/cbb/schools/']))
 school_absolute_links = [urljoin(ALL_SCHOOLS_PAGE, url)
-                         for url in school_relative_links][:10]
+                         for url in school_relative_links]
 
 gamelog_links = []
 for url in school_absolute_links:
@@ -38,7 +38,7 @@ def scrape_gamelog(driver, gamelog_link):
     team = match.group(1)
     year = match.group(2)
     driver.get(gamelog_link)
-    sleep(2)
+    sleep(1)
     html = lxml.html.fromstring(driver.page_source)
     for school_link in html.xpath(
             "//table[@id='stats_basic']//a[contains(@href, '/cbb/schools/')]"):
@@ -48,7 +48,7 @@ def scrape_gamelog(driver, gamelog_link):
     (driver
         .find_element_by_xpath("//span[contains(@onclick, 'table2csv')]")
         .click())
-    sleep(2)
+    sleep(1)
     csv = driver.find_element_by_xpath('//pre').text
     with open('data/{}{}.csv'.format(team, year), 'w') as f:
         f.write(csv)
