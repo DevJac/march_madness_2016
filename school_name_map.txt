@@ -1,0 +1,857 @@
+york-ne 
+south-carolina-upstate South Carolina Upstate
+hendrix Hendrix
+willamette Willamette
+loyola-la Loyola (LA)
+arizona-christian Arizona Christian
+pacifica Pacifica
+sam-houston-state Sam Houston State
+avila Avila
+toledo Toledo
+indiana Indiana
+truman-state Truman State
+central-michigan Central Michigan
+brown Brown
+wilmington-oh Wilmington (OH)
+columbia Columbia
+harris-stowe Harris-Stowe
+minnesota-morris Minnesota-Morris
+montana Montana
+morehead-state Morehead State
+utah-state Utah State
+bethel-tn Bethel (TN)
+massachusetts UMass
+saint-marys-mn Saint Mary's (MN)
+concordia-mi Concordia (MI)
+tulane Tulane
+averett Averett
+albion Albion
+rhodes Rhodes
+brigham-young BYU
+ave-maria Ave Maria
+trinity-fl Trinity (FL)
+kent-state Kent State
+xavier Xavier
+alabama-birmingham Alabama-Birmingham
+medgar-evers Medgar Evers
+long-beach-state Long Beach State
+montana-state Montana State
+goshen Goshen
+charlotte Charlotte
+canisius Canisius
+mid-atlantic-christian Mid-Atlantic Christian
+california-davis UC-Davis
+saint-xavier-il Saint Xavier (IL)
+southeast-missouri-state Southeast Missouri State
+florida-atlantic Florida Atlantic
+northeastern Northeastern
+lewis-clark Lewis & Clark
+robert-morris Robert Morris
+chicago-state Chicago State
+seattle Seattle
+villanova Villanova
+transylvania Transylvania
+howard Howard
+peace Peace
+marist Marist
+bob-jones Bob Jones University
+denver Denver
+dalton-state Dalton State
+haskell-indian-nations-institute Haskell Indian Nations Institute
+southern-tech Southern Tech
+st-andrews St. Andrews
+maryland Maryland
+rice Rice
+abilene-christian Abilene Christian
+rider Rider
+reinhardt Reinhardt
+linfield Linfield
+ohio-northern Ohio Northern
+boston-college Boston College
+arizona Arizona
+pittsburgh-bradford Pittsburgh-Bradford
+lagrange LaGrange
+texas-state Texas State
+san-diego San Diego
+concordia-al Concordia (AL)
+anderson-sc Anderson (SC)
+clearwater-christian Clearwater Christian
+louisiana-state LSU
+saint-martins Saint Martin's
+california-riverside UC-Riverside
+houston-baptist Houston Baptist
+alcorn-state Alcorn State
+florida-tech Florida Tech
+houghton Houghton
+missouri-st Missouri S&T
+la-roche La Roche
+anderson-in Anderson (IN)
+wheelock Wheelock
+missouri-kansas-city UMKC
+baylor Baylor
+oral-roberts Oral Roberts
+queens-ny Queens (NY)
+berry Berry
+ohio Ohio
+delaware-state Delaware State
+north-greenville North Greenville
+iowa-state Iowa State
+tennessee-wesleyan Tennessee Wesleyan
+winthrop Winthrop
+walla-walla Walla Walla
+trevecca-nazarene Trevecca Nazarene
+eckerd Eckerd
+northern-illinois Northern Illinois
+cedarville Cedarville
+goldey-beacom Goldey-Beacom
+georgia-tech Georgia Tech
+notre-dame-oh Notre Dame (OH)
+howard-payne Howard Payne
+marquette Marquette
+maine Maine
+lyon Lyon
+incarnate-word Incarnate Word
+fort-lewis Fort Lewis
+lamar Lamar
+texas-tyler Texas-Tyler
+southern-methodist SMU
+bluefield-college-va Bluefield College (VA)
+haverford Haverford
+richmond Richmond
+providence Providence
+louisville Louisville
+emporia-state Emporia State
+thomas-me Thomas (ME)
+savannah-state Savannah State
+arkansas-pine-bluff Arkansas-Pine Bluff
+texas-pan-american Texas-Rio Grande Valley
+davidson Davidson
+cumberland Cumberland
+st-catharine St. Catharine
+pfeiffer Pfeiffer
+north-florida North Florida
+texas-wesleyan Texas Wesleyan
+vanderbilt Vanderbilt
+oregon-tech Oregon Tech
+texas-lutheran Texas Lutheran
+akron Akron
+arlington-baptist Arlington Baptist
+westminster-pa Westminster (PA)
+memphis Memphis
+cal-state-fullerton Cal State Fullerton
+cincinnati-christian Cincinnati Christian
+central-arkansas Central Arkansas
+mt-st-joseph Mt. St. Joseph
+montreat Montreat
+college-of-idaho College of Idaho
+toccoa-falls Toccoa Falls
+pittsburgh Pitt
+north-carolina-wilmington North Carolina-Wilmington
+american American
+hardin-simmons Hardin-Simmons
+notre-dame Notre Dame
+creighton Creighton
+limestone Limestone
+duke Duke
+prairie-view Prairie View
+ucla UCLA
+pacific Pacific
+bryn-athyn Bryn Athyn
+texas-am Texas A&M
+north-texas North Texas
+langston Langston
+nevada Nevada
+illinois-state Illinois State
+emmanuel Emmanuel
+north-park North Park
+missouri-state Missouri State
+capital Capital
+jacksonville-state Jacksonville State
+missouri-valley Missouri Valley
+rowan Rowan
+utica Utica
+milligan Milligan
+life-pacific Life Pacific
+wittenberg Wittenberg
+trinity-christian Trinity Christian
+southwestern-christian Southwestern Christian
+indiana-kokomo Indiana-Kokomo
+robert-morris-il Robert Morris (IL)
+heidelberg Heidelberg
+warner-southern Warner Southern
+fort-valley-state Fort Valley State
+california-santa-barbara UCSB
+hartford Hartford
+alice-lloyd Alice Lloyd
+louisiana-lafayette Louisiana-Lafayette
+louisiana-state-alexandria Louisiana State-Alexandria
+chattanooga Chattanooga
+marian Marian
+spring-hill Spring Hill
+georgia-southern Georgia Southern
+northern-arizona Northern Arizona
+fayetteville-state Fayetteville State
+chapman Chapman
+nebraska Nebraska
+union-tn Union (TN)
+yale Yale
+new-mexico-state New Mexico State
+mcneese-state McNeese State
+holy-names Holy Names
+fresno-state Fresno State
+michigan-dearborn Michigan-Dearborn
+central-baptist Central Baptist
+kalamazoo Kalamazoo
+west-alabama West Alabama
+california-irvine UC-Irvine
+notre-dame-de-namur Notre Dame de Namur
+tennessee Tennessee
+salisbury Salisbury
+hampden-sydney Hampden-Sydney
+penn-state-mont-alto Penn State-Mont Alto
+concordia-or Concordia (OR)
+francis-marion Francis Marion
+la-verne La Verne
+voorhees Voorhees
+susquehanna Susquehanna
+masters Master's
+wyoming Wyoming
+minnesota Minnesota
+illinois Illinois
+arkansas-little-rock Arkansas-Little Rock
+kentucky-christian Kentucky Christian
+coast-guard Coast Guard
+wisconsin-parkside Wisconsin-Parkside
+colorado-college Colorado College
+penn-state-beaver Penn State-Beaver
+texas-el-paso UTEP
+miles Miles
+clemson Clemson
+texas Texas
+western-state Western State
+mount-ida Mount Ida
+morehouse Morehouse
+bowie-state Bowie State
+western-illinois Western Illinois
+regis Regis
+fairleigh-dickinson Fairleigh Dickinson
+antelope-valley Antelope Valley
+texas-san-antonio UTSA
+brescia Brescia
+west-virginia West Virginia
+texas-permian-basin Texas-Permian Basin
+embry-riddle Embry-Riddle Aeronautical University
+nyit NYIT
+southern-illinois Southern Illinois
+miami-oh Miami (OH)
+mobile Mobile
+indiana-state Indiana State
+le-tourneau Le Tourneau
+eureka Eureka
+westminster-ut Westminster (UT)
+depaul DePaul
+southern Southern
+cal-lutheran Cal Lutheran
+south-dakota South Dakota
+cairn Cairn
+lees-mcrae Lees-McRae
+dillard Dillard
+wagner Wagner
+wake-forest Wake Forest
+wofford Wofford
+north-carolina-wesleyan North Carolina Wesleyan
+keystone Keystone
+cal-poly Cal Poly
+west-virginia-tech West Virginia Tech
+molloy Molloy
+towson Towson
+johnson-university Johnson University
+valley-city-state Valley City State
+ferris-state Ferris State
+texas-am-corpus-christi Texas A&M-Corpus Christi
+concordia-st-paul Concordia-St. Paul
+liberty Liberty
+north-carolina-greensboro North Carolina-Greensboro
+benedictine-az Benedictine
+alaska-anchorage Alaska-Anchorage
+coastal-georgia Coastal Georgia
+louisiana-college Louisiana College
+presbyterian Presbyterian
+huston-tillotson Huston-Tillotson
+hawaii-hilo Hawaii-Hilo
+wingate Wingate
+goucher Goucher
+michigan Michigan
+colorado-state Colorado State
+oakland-city Oakland City
+dubuque Dubuque
+st-edwards St. Edward's
+north-carolina-asheville North Carolina-Asheville
+oberlin Oberlin
+east-carolina East Carolina
+tennessee-martin UT-Martin
+saint-peters St. Peter's
+alabama-state Alabama State
+northwestern Northwestern
+college-of-charleston College of Charleston
+cal-state-dominguez-hills Cal State Dominguez Hills
+st-thomas-aquinas St. Thomas Aquinas
+emory-henry Emory & Henry
+barber-scotia Barber-Scotia
+dickinson-state-nd Dickinson State (ND)
+eastern-illinois Eastern Illinois
+chestnut-hill Chestnut Hill
+buffalo Buffalo
+loyola-md Loyola (MD)
+campbellsville Campbellsville
+chowan Chowan
+northern-kentucky Northern Kentucky
+mary-washington Mary Washington
+dayton Dayton
+valparaiso Valparaiso
+colorado-colorado-springs Colorado-Colorado Springs
+illinois-tech Illinois Tech
+portland-state Portland State
+elon Elon
+claflin Claflin
+youngstown-state Youngstown State
+widener Widener
+menlo Menlo
+north-alabama North Alabama
+oklahoma Oklahoma
+saint-josephs St. Joseph's
+indiana-south-bend Indiana-South Bend
+bethesda Bethesda
+laroche Laroche
+notre-dame-ca Notre Dame (CA)
+albany-state-ga Albany State (GA)
+newbury Newbury
+oklahoma-state Oklahoma State
+north-dakota-state North Dakota State
+crowleys-ridge Crowley's Ridge
+samford Samford
+maryville-mo Maryville (MO)
+shenandoah Shenandoah
+eastern-washington Eastern Washington
+great-falls Great Falls
+st-johns-ny St. John's (NY)
+lincoln Lincoln
+maine-fort-kent Maine-Fort Kent
+hampton Hampton
+roosevelt Roosevelt
+north-carolina UNC
+austin-college Austin College
+pepperdine Pepperdine
+marygrove Marygrove
+virginia-wise Virginia Wise
+george-fox George Fox
+texas-southern Texas Southern
+central-connecticut-state Central Connecticut
+thiel Thiel
+earlham-in Earlham (IN)
+alabama-huntsville Alabama-Huntsville
+carroll Carroll
+purdue-calumet Purdue Calumet
+saint-marys-ca Saint Mary's (CA)
+auburn Auburn
+trinity-international-il Trinity International (IL)
+new-orleans New Orleans
+centenary-la Centenary (LA)
+madonna Madonna
+greenville-il Greenville (IL)
+kennesaw-state Kennesaw State
+colorado-christian Colorado Christian
+south-alabama South Alabama
+maryland-eastern-shore Maryland-Eastern Shore
+philadelphia Philadelphia
+westminster Westminster
+western-carolina Western Carolina
+eastern-kentucky Eastern Kentucky
+cal-state-east-bay Cal State East Bay
+norfolk-state Norfolk State
+west-virginia-wesleyan West Virginia Wesleyan
+st-ambrose St. Ambrose
+wilmington-de Wilmington (DE)
+immaculata Immaculata
+idaho Idaho
+stony-brook Stony Brook
+texas-arlington Texas-Arlington
+virginia Virginia
+arizona-state Arizona State
+virginia-military-institute Virginia Military Institute
+central-florida UCF
+newberry Newberry
+drexel Drexel
+charleston-southern Charleston Southern
+northern-iowa Northern Iowa
+south-carolina South Carolina
+tusculum Tusculum
+montana-tech Montana Tech
+florida-international Florida International
+hawaii Hawaii
+kentucky Kentucky
+waldorf Waldorf
+vanguard Vanguard
+lafayette Lafayette
+north-carolina-central North Carolina Central
+east-tennessee-state ETSU
+wisconsin Wisconsin
+alabama Alabama
+tennessee-tech Tennessee Tech
+martin-methodist Martin Methodist
+southwestern-adventist Southwestern Adventist
+cal-state-northridge Cal State Northridge
+southern-virginia Southern Virginia
+tabor-college Tabor College
+tennessee-state Tennessee State
+njit NJIT
+worcester-state Worcester State
+rochester-mi Rochester (MI)
+suffolk Suffolk
+summit Summit
+aquinas Aquinas
+franklin-pierce Franklin Pierce
+columbus-state Columbus State
+iupui IUPUI
+brigham-young-hawaii Brigham Young-Hawaii
+william-woods William Woods
+san-diego-state San Diego State
+mount-saint-vincent Mount Saint Vincent
+catholic Catholic
+alabama-am Alabama A&M
+mount-st-joseph Mount St. Joseph
+dartmouth Dartmouth
+san-jose-state San Jose State
+southern-new-orleans Southern-New Orleans
+la-salle La Salle
+denison Denison
+florida-christian Florida Christian
+texas-am-international Texas A&M-International
+tulsa Tulsa
+western-new-mexico Western New Mexico
+mississippi-college Mississippi College
+kansas Kansas
+florida-state Florida State
+williams-baptist Williams Baptist
+sarah-lawrence Sarah Lawrence
+grambling Grambling
+johnson-wales Johnson & Wales
+virginia-lynchburg Virginia-Lynchburg
+university-of-the-southwest University of the Southwest
+st-josephs-ny St. Joseph's (NY)
+campbell Campbell
+silver-lake Silver Lake
+grand-canyon Grand Canyon
+erskine Erskine
+mississippi Ole Miss
+cal-state-monterey-bay Cal State Monterey Bay
+southeastern-louisiana Southeastern Louisiana
+hope-international Hope International
+florida-national Florida National University
+jackson-state Jackson State
+louisiana-monroe Louisiana-Monroe
+southeastern Southeastern
+colorado Colorado
+coastal-carolina Coastal Carolina
+east-mennonite East Mennonite
+california-merced UC-Merced
+north-carolina-at North Carolina A&T
+albany-ny Albany (NY)
+northwestern-ohio Northwestern Ohio
+washington Washington
+siena-heights Siena Heights
+murray-state Murray State
+manchester Manchester
+california-san-diego UC-San Diego
+allen Allen
+selma Selma University
+maryland-baltimore-county UMBC
+western-oregon Western Oregon
+rockhurst Rockhurst
+bluefield-wv Bluefield (WV)
+chaminade Chaminade
+jarvis-christian Jarvis Christian
+merchant-marine Merchant Marine
+hofstra Hofstra
+brevard Brevard
+asbury Asbury
+central-pennsylvania-college Central Pennsylvania College
+southeastern-oklahoma Southeastern Oklahoma State
+butler Butler
+warren-wilson Warren Wilson
+evansville Evansville
+dallas-christian Dallas Christian
+ferrum Ferrum
+northern-colorado Northern Colorado
+iowa Iowa
+william-jessup William Jessup
+florida-am Florida A&M
+gallaudet Gallaudet
+aurora Aurora
+middle-tennessee Middle Tennessee
+oregon Oregon
+massachusetts-institute-of-technology MIT
+schreiner Schreiner
+harvard Harvard
+elmhurst Elmhurst
+arkansas-state Arkansas State
+bridgewater-va Bridgewater (VA)
+letourneau LeTourneau
+southwestern-tx Southwestern (TX)
+texas-am-kingsville Texas A&M-Kingsville
+cheyney Cheyney
+auburn-montgomery Auburn Montgomery
+florida Florida
+loyola-il Loyola (IL)
+black-hills-state Black Hills State
+washington-college Washington College
+mars-hill Mars Hill
+judson Judson
+multnomah Multnomah
+pacific-or Pacific (OR)
+palm-beach-atlantic Palm Beach Atlantic
+ohio-dominican Ohio Dominican
+ursinus Ursinus
+bethune-cookman Bethune-Cookman
+northwest-university Northwest University
+fisk Fisk
+seton-hall Seton Hall
+johnson-wales-ri Johnson & Wales (RI)
+chadron-state Chadron State
+northern-michigan Northern Michigan
+northwest-indian-college Northwest Indian College
+lehigh Lehigh
+clayton-state Clayton State
+navy Navy
+southwest-state-mn Southwest State (MN)
+college-faith College of Faith
+arkansas-monticello Arkansas-Monticello
+bowling-green-state Bowling Green State
+gwynedd-mercy Gwynedd-Mercy
+open-bible-college Open Bible College
+arkansas-fort-smith Arkansas-Fort Smith
+santa-clara Santa Clara
+quincy Quincy
+loyola-marymount Loyola Marymount
+delaware Delaware
+peru-state Peru State
+new-mexico New Mexico
+tuskegee Tuskegee
+bacone Bacone
+arkansas-tech Arkansas Tech
+temple Temple
+wentworth Wentworth
+tiffin Tiffin
+morrisville-state Morrisville State
+monmouth Monmouth
+northland Northland
+methodist Methodist
+wayland-baptist Wayland Baptist
+kean Kean
+king-tn King (TN)
+southern-mississippi Southern Miss
+california University of California
+hiwassee Hiwassee
+southwestern-oklahoma-state Southwestern Oklahoma State
+nichols Nichols
+william-carey William Carey
+georgia Georgia
+baruch-college Baruch College
+north-dakota North Dakota
+princeton Princeton
+long-island-university LIU-Brooklyn
+defiance Defiance
+boyce Boyce
+saint-louis Saint Louis
+viterbo Viterbo University
+seton-hill Seton Hill
+hartwick Hartwick
+lourdes Lourdes
+ball-state Ball State
+nicholls-state Nicholls State
+st-katherine St. Katherine
+san-francisco-state San Francisco State
+millsaps Millsaps
+edward-waters Edward Waters
+mississippi-state Mississippi State
+stetson Stetson
+marshall Marshall
+morgan-state Morgan State
+wright-state Wright State
+daniel-webster Daniel Webster
+eastern-michigan Eastern Michigan
+niagara Niagara
+mcmurry McMurry
+mercer Mercer
+merchant-marine-academy Merchant Marine Academy
+hood Hood
+grace-bible Grace Bible
+tennessee-temple Tennessee Temple
+st-bonaventure St. Bonaventure
+mercy Mercy
+mayville-state Mayville State
+lipscomb Lipscomb
+pennsylvania Penn
+james-madison James Madison
+fresno-pacific Fresno Pacific
+farmingdale-state Farmingdale State
+georgetown Georgetown
+southern-vermont Southern Vermont
+florida-memorial Florida Memorial
+point-loma-nazarene Point Loma Nazarene
+iowa-wesleyan Iowa Wesleyan
+newman Newman
+ryerson Ryerson
+iona Iona
+new-hampshire New Hampshire
+salve-regina Salve Regina
+northwest-christian Northwest Christian
+mitchell Mitchell
+vermont Vermont
+alma Alma
+purdue Purdue
+mid-continent Mid-Continent
+lyndon-state Lyndon State
+malone Malone
+penn-state Penn State
+pine-manor Pine Manor
+coe Coe
+utah-valley Utah Valley
+connecticut UConn
+florida-college Florida College
+east-central East Central
+rutgers-newark Rutgers-Newark
+holy-cross Holy Cross
+houston Houston
+southern-illinois-edwardsville Southern Illinois-Edwardsville
+western-michigan Western Michigan
+trinity-ct Trinity (CT)
+mount-ida-college Mount Ida College
+south-dakota-state South Dakota State
+kansas-state Kansas State
+coker Coker
+saint-josephs-in Saint Joseph's (IN)
+mount-olive Mount Olive
+milwaukee Milwaukee
+portland Portland
+randolph Randolph
+carroll-mt Carroll (MT)
+roanoke Roanoke
+wisconsin-superior Wisconsin-Superior
+michigan-state Michigan State
+washington-lee Washington & Lee
+lesley Lesley
+georgia-state Georgia State
+louisiana-state-shreveport Louisiana State-Shreveport
+coppin-state Coppin State
+bristol Bristol University
+henderson-state Henderson State
+cal-state-bakersfield Cal State Bakersfield
+san-francisco San Francisco
+greenville Greenville
+bucknell Bucknell
+citadel Citadel
+william-jewell William Jewell
+illinois-chicago UIC
+idaho-state Idaho State
+angelo-state Angelo State
+olivet-nazarene Olivet Nazarene
+hawaii-pacific Hawaii Pacific
+catawba Catawba
+florida-gulf-coast Florida Gulf Coast
+corban Corban
+tampa Tampa
+central-methodist Central Methodist
+cal-state-maritime Cal State Maritime
+stillman Stillman
+drake Drake
+graceland-ia Graceland (IA)
+bluefield-state Bluefield State
+st-thomas-tx St. Thomas (TX)
+missouri Missouri
+bluffton Bluffton
+cal-state-los-angeles Cal State Los Angeles
+appalachian-state Appalachian State
+virginia-union Virginia Union
+wilberforce Wilberforce
+cincinnati Cincinnati
+eastern-oregon Eastern Oregon
+texas-christian Texas Christian
+boston-university Boston University
+northern-new-mexico Northern New Mexico
+trinity-baptist Trinity Baptist
+air-force Air Force
+mississippi-valley-state Mississippi Valley State
+cleveland-state Cleveland State
+bradley Bradley
+troy Troy
+paul-quinn Paul Quinn
+gonzaga Gonzaga
+south-florida South Florida
+virginia-intermont Virginia Intermont
+army Army
+caldwell Caldwell
+belmont Belmont
+nebraska-omaha Nebraska-Omaha
+city-college-of-new-york CCNY
+montana-western Montana Western
+midwestern-state Midwestern State
+alfred Alfred
+washington-state Washington State
+saint-francis-pa Saint Francis (PA)
+bethesda-ca Bethesda University (CA)
+piedmont Piedmont
+wesley Wesley
+tougaloo Tougaloo
+indiana-tech Indiana Tech
+st-francis-ny St. Francis (NY)
+pacific-union Pacific Union
+ipfw IPFW
+new-mexico-highlands New Mexico Highlands
+wiley Wiley
+guilford Guilford
+fisher-college Fisher College
+hiram Hiram
+saint-rose Saint Rose
+furman Furman
+suny-oneonta SUNY-Oneonta
+taylor-in Taylor (IN)
+sewanee Sewanee
+san-diego-christian San Diego Christian
+mount-st-marys Mount St. Mary's
+bryant Bryant
+syracuse Syracuse
+southern-arkansas Southern Arkansas
+case-western-reserve Case Western Reserve
+thomas-ga Thomas University
+quinnipiac Quinnipiac
+la-sierra La Sierra
+penn-state-harrisburg Penn State-Harrisburg
+baker Baker
+minnesota-duluth Minnesota-Duluth
+rhode-island Rhode Island
+pace Pace
+high-point High Point
+radford Radford
+california-santa-cruz UC-Santa Cruz
+central-state-oh Central State (OH)
+staten-island Staten Island
+duquesne Duquesne
+metropolitan-state Metropolitan State
+south-carolina-state South Carolina State
+st-francis-il St. Francis (IL)
+miami-fl Miami (FL)
+cameron Cameron
+our-lady-of-the-lake Our Lady of the Lake
+sul-ross-state Sul Ross State
+mckendree McKendree
+virginia-tech Virginia Tech
+virginia-commonwealth VCU
+paine Paine
+thomas-more Thomas More
+cornell Cornell
+illinois-springfield Illinois-Springfield
+ohio-mid-western Ohio Mid-Western
+urbana Urbana
+blue-mountain-college Blue Mountain College
+fairfield Fairfield
+baptist-bible-pa Baptist Bible (PA)
+arkansas Arkansas
+flagler Flagler
+george-washington George Washington
+trinity-tx Trinity (TX)
+cincinnati-clermont Cincinnati-Clermont
+covenant Covenant
+sacramento-state Sacramento State
+northwood-tx Northwood (TX)
+stephen-f-austin Stephen F. Austin
+fairleigh-dickinson-florham Fairleigh Dickinson-Florham
+ecclesia Ecclesia
+wichita-state Wichita State
+oregon-state Oregon State
+binghamton Binghamton
+george-mason George Mason
+old-dominion Old Dominion
+minnesota-crookston Minnesota-Crookston
+green-bay Green Bay
+belhaven-ms Belhaven (MS)
+detroit-mercy Detroit
+austin-peay Austin Peay
+rutgers Rutgers
+biola Biola
+sonoma-state Sonoma State
+evergreen-state Evergreen State
+pensacola-christian Pensacola Christian
+greensboro Greensboro
+washington-adventist Washington Adventist
+university-sciences University of the Sciences (Pa.)
+dakota-state Dakota State
+rio-grande Rio Grande
+william-mary William & Mary
+eastern Eastern
+northwest-nazarene Northwest Nazarene
+presentation-college Presentation College
+berea Berea
+middle-georgia-state Middle Georgia State
+brewton-parker Brewton-Parker
+albertus-magnus Albertus Magnus
+gardner-webb Gardner-Webb
+boise-state Boise State
+ouachita Ouachita
+colgate Colgate
+north-carolina-state North Carolina State
+southern-california USC
+le-moyne-owen LeMoyne-Owen
+columbia-international Columbia International
+oakwood Oakwood
+westminster-mo Westminster (MO)
+john-brown John Brown
+siena Siena
+nevada-las-vegas UNLV
+nova-southeastern Nova Southeastern
+southern-utah Southern Utah
+northwest-oklahoma-state Northwest Oklahoma State
+massachusetts-lowell UMass-Lowell
+presentation Presentation
+manhattan Manhattan
+simpson-ca Simpson (CA)
+texas-college Texas College
+geneva Geneva
+weber-state Weber State
+mesa-state Mesa State
+utah Utah
+louisiana-tech Louisiana Tech
+ohio-state Ohio State
+adams-state Adams State
+jacksonville Jacksonville
+kenyon Kenyon
+purdue-north-central Purdue North Central
+indiana-northwest Indiana-Northwest
+new-hope-christian New Hope Christian
+stanford Stanford
+hillsdale Hillsdale
+northwestern-state Northwestern State
+longwood Longwood
+belmont-abbey Belmont Abbey
+sacred-heart Sacred Heart
+pacific-lutheran Pacific Lutheran
+western-kentucky Western Kentucky
+simpson Simpson
+young-harris Young Harris
+oakland Oakland
+fordham Fordham
+mount-vernon-nazarene Mount Vernon Nazarene
+johnson-wales-nc Johnson & Wales (NC)
+hannibal-lagrange Hannibal-LaGrange
+kentucky-state Kentucky State
+montana-state-billings Montana State-Billings
+emerson Emerson
+dallas-baptist Dallas Baptist
+webber Webber
+south-dakota-school-of-mines South Dakota School of Mines
+truett-mcconnell Truett-McConnell
+hillsdale-free-will-baptist Hillsdale Free Will Baptist
+wayne-state-ne Wayne State (NE)
+texas-tech Texas Tech
+champion-baptist Champion Baptist
+ohio-valley Ohio Valley
