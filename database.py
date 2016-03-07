@@ -1,11 +1,14 @@
 import os
 import re
 import difflib
+from datetime import datetime
+from tqdm import tqdm
 import pandas as pd
 from sqlalchemy import Column as SQAColumn
 from sqlalchemy import create_engine, Integer, String, Date, Enum
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.exc import DataError, IntegrityError
 
 
 def Column(*args, **kwargs):
@@ -20,7 +23,7 @@ class Game(Base):
     __tablename__ = 'game'
 
     team = Column(String, primary_key=True)
-    opp = Column(String, primary_key=True)
+    opponent = Column(String, primary_key=True)
     date = Column(Date, primary_key=True)
     result = Column(Enum('win', 'loss', name='win_loss'))
     points = Column(Integer)
@@ -39,29 +42,57 @@ class Game(Base):
     fouls = Column(Integer)
 
 
-engine = create_engine('postgresql+psycopg2://buttons:buttons@localhost/ncaa')
+engine = create_engine('postgresql://buttons:buttons@localhost/ncaa')
 new_session = sessionmaker(engine)
 
 
 def load_data():
-    print 'load data'
+    win_loss_map = {'W': 'win', 'L': 'loss'}
+    school_name_map = {}
+    with open('school_name_map.txt') as f:
+        for line in f:
+            m = re.match('([a-z-]+) (.*)', line)
+            school_name_map[m.group(1)] = m.group(2)
+    Base.metadata.drop_all(engine)
     Base.metadata.create_all(engine)
-    filename_teams = set()
-    data_teams = set()
-    for filename in os.listdir('data'):
-        print filename
-        filename_teams.add(re.match('([a-z-]+)201', filename).group(1))
+    session = new_session()
+    for filename in tqdm(os.listdir('data')):
+        team = school_name_map[re.match('[a-z-]+', filename).group(0)]
         df = pd.read_csv(os.path.join('data', filename))
-        try:
-            data_teams.update(df['Opp'])
-        except KeyError:
-            pass
-    print filename_teams
-    print data_teams
-    for team in data_teams:
-        if type(team) == float:
-            continue
-        print team, difflib.get_close_matches(team, filename_teams)
+        for row in df.itertuples():
+            session.add(Game(team=team,
+                             opponent=row.Opp,
+                             date=datetime.strptime(
+                                row.Date, '%Y-%m-%d').date(),
+                             result=win_loss_map[row._6[0]],
+                             points=row.Tm,
+                             field_goals=row.FG,
+                             field_goal_attempts=row.FGA,
+                             three_points=row._12,
+                             three_point_attempts=row._13,
+                             free_throws=row.FT,
+                             free_throw_attempts=row.FTA,
+                             offensive_rebounds=row.ORB,
+                             rebounds=row.TRB,
+                             assists=row.AST,
+                             steals=row.STL,
+                             blocks=row.BLK,
+                             turnovers=row.TOV,
+                             fouls=row.PF))
+            try:
+                session.commit()
+            except (DataError, IntegrityError):
+                session.rollback()
+    bad_count = 0
+    total_games = session.query(Game).count()
+    for game in tqdm(session.query(Game), total=total_games):
+        if not session.query(Game).filter_by(team=game.opponent,
+                                             opponent=game.team,
+                                             date=game.date).one_or_none():
+            bad_count += 1
+            session.delete(game)
+            session.commit()
+    print '{:,d} / {:,d} bad games'.format(bad_count, total_games)
 
 
 if __name__ == '__main__':
