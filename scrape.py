@@ -38,22 +38,17 @@ def scrape_gamelog(driver, gamelog_link):
     team = match.group(1)
     year = match.group(2)
     driver.get(gamelog_link)
-    sleep(1)
+    sleep(.5)
     html = lxml.html.fromstring(driver.page_source)
     for school_link in html.xpath(
             "//table[@id='stats_basic']//a[contains(@href, '/cbb/schools/')]"):
-        try:
-            school_name_map[school_link.text.strip()] = (
-                re.search('/cbb/schools/([a-z-]+)/', school_link.attrib['href'])
-                .group(1))
-        except:
-            print repr(school_link.text)
-            print school_link.attrib['href']
-            raise
+        school_name_map[(school_link.text or '').strip()] = (
+            re.search('/cbb/schools/([a-z-]+)/', school_link.attrib['href'])
+            .group(1))
     (driver
         .find_element_by_xpath("//span[contains(@onclick, 'table2csv')]")
         .click())
-    sleep(1)
+    sleep(.5)
     csv = driver.find_element_by_xpath('//pre').text
     with open('data/{}{}.csv'.format(team, year), 'w') as f:
         f.write(csv)
