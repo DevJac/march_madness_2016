@@ -91,7 +91,7 @@ def load_data():
                                              date=game.date).one_or_none():
             bad_count += 1
             session.delete(game)
-            session.commit()
+    session.commit()
     print '{:,d} / {:,d} bad games'.format(bad_count, total_games)
 
 
