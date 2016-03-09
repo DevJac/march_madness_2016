@@ -4,9 +4,9 @@ import difflib
 from datetime import datetime
 from tqdm import tqdm
 import pandas as pd
-from sqlalchemy import Column as SQAColumn
+from sqlalchemy import Column as SQAColumn, and_
 from sqlalchemy import create_engine, Integer, String, Date, Enum
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, relationship, remote, foreign
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.exc import DataError, IntegrityError
 
@@ -40,6 +40,13 @@ class Game(Base):
     blocks = Column(Integer)
     turnovers = Column(Integer)
     fouls = Column(Integer)
+    opp = relationship(
+        'Game',
+        lazy='joined',
+        primaryjoin=and_(
+            foreign(team) == remote(opponent),
+            foreign(opponent) == remote(team),
+            foreign(date) == remote(date)))
 
 
 engine = create_engine('postgresql://buttons:buttons@localhost/ncaa')

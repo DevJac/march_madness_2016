@@ -5,8 +5,8 @@ from database import Game, new_session
 
 def team_strength(winner_losers):
     games_and_weights = defaultdict(int)
-    for game in winner_losers:
-        games_and_weights[game] += 1
+    for winner, loser, weight in winner_losers:
+        games_and_weights[winner, loser] += weight
     win_graph = nx.DiGraph()
     loss_graph = nx.DiGraph()
     for (winner, loser), weight in games_and_weights.iteritems():
