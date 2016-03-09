@@ -1,7 +1,7 @@
 import os
 import re
 import difflib
-from datetime import datetime
+from datetime import datetime, timedelta
 from tqdm import tqdm
 import pandas as pd
 from sqlalchemy import Column as SQAColumn, and_
@@ -22,10 +22,10 @@ Base = declarative_base()
 class Game(Base):
     __tablename__ = 'game'
 
-    team = Column(String, primary_key=True)
-    opponent = Column(String, primary_key=True)
-    date = Column(Date, primary_key=True)
-    result = Column(Enum('win', 'loss', name='win_loss'))
+    team = Column(String, primary_key=True, index=True)
+    opponent = Column(String, primary_key=True, index=True)
+    date = Column(Date, primary_key=True, index=True)
+    result = Column(Enum('win', 'loss', name='win_loss'), index=True)
     points = Column(Integer)
     field_goals = Column(Integer)
     field_goal_attempts = Column(Integer)
@@ -42,6 +42,7 @@ class Game(Base):
     fouls = Column(Integer)
     opp = relationship(
         'Game',
+        uselist=False,
         lazy='joined',
         primaryjoin=and_(
             foreign(team) == remote(opponent),
