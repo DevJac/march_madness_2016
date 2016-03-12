@@ -1,7 +1,10 @@
 import datetime
 import itertools
+import difflib
 from collections import defaultdict
 from datetime import date
+from tqdm import tqdm
+from sklearn.ensemble import RandomForestClassifier as RFC
 from sqlalchemy import func
 import networkx as nx
 from database import Game, new_session
@@ -105,9 +108,54 @@ def game_features(game):
                 Game.date > game.date - datetime.timedelta(days=30*6)))
     ts = team_strength(
         (g.team, g.opponent, 3 + min(5, g.points - g.opp.points))
-         for g in all_past_games)
-    return tuple(itertools.chain.from_iterable([
+        for g in all_past_games)
+    our_strength = ts.get(game.team, 0) * 10000
+    their_strength = ts.get(game.opponent, 0) * 10000
+    return tuple(itertools.chain(
+        [float(i) for i in team_stats],
+        [float(i) for i in opponent_stats],
+        [float(a) - float(b) for a, b in zip(team_stats, opponent_stats)],
+        [our_strength, their_strength, our_strength - their_strength]))
+
+def predict(team, opponent, date=None):
+    date = date or datetime.date.today()
+    session = new_session()
+    all_teams = [i[0] for i in session.query(func.distinct(Game.team))]
+    team = difflib.get_close_matches(team, all_teams)[0]
+    opponent = difflib.get_close_matches(opponent, all_teams)[0]
+    print '{} vs {}'.format(team, opponent)
+    all_past_games = (
+        session
+        .query(Game)
+        .filter(Game.date < date,
+                Game.date > date - datetime.timedelta(days=30*6))
+        .all())
+    features = [game_features(g) for g in tqdm(all_past_games)]
+    targets = [g.result for g in all_past_games]
+    team_stats = (
+        session
+        .query(*features)
+        .filter(Game.team == team,
+                Game.date < date,
+                Game.date > date - datetime.timedelta(days=30*6))
+        .one())
+    opponent_stats = (
+        session
+        .query(*features)
+        .filter(Game.team == opponent,
+                Game.date < date,
+                Game.date > date - datetime.timedelta(days=30*6))
+        .one())
+    ts = team_strength(
+        (g.team, g.opponent, 3 + min(5, g.points - g.opp.points))
+         for g in all_past_games.filter(Game.result == 'win'))
+    our_strength = ts[game.team] * 10000
+    their_strength = ts[game.opponent] * 10000
+    this_game_features = tuple(itertools.chain(
         (float(i) for i in team_stats),
         (float(i) for i in opponent_stats),
-        [ts[game.team] * 10000],
-        [ts[game.opponent] * 10000]]))
+        (float(a) - float(b) for a, b in zip(team_stats, opponent_stats)),
+        [our_strength, their_strength, our_strength - their_strength]))
+    c = RFC()
+    c.fit(features, targets)
+    return c.predict_proba([this_game_features])
