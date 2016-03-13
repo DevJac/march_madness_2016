@@ -5,6 +5,7 @@ from collections import defaultdict
 from datetime import date
 from tqdm import tqdm
 from sklearn.ensemble import RandomForestClassifier as RFC
+from sqlalchemy.orm import joinedload
 from sqlalchemy import func
 import networkx as nx
 from database import Game, new_session
@@ -25,8 +26,11 @@ def team_strength(winner_losers):
 
 def print_strongest_teams():
     session = new_session()
-    r = session.query(Game).filter(Game.result == 'win',
-                                   Game.date > date(2015, 6, 1))
+    r = (session
+         .query(Game)
+         .filter(Game.result == 'win',
+                 Game.date > date(2015, 6, 1))
+         .options(joinedload(Game.opp)))
     wl = [(g.team, g.opponent, 3 + min(5, g.points - g.opp.points))
           for g in r]
     ts = team_strength(wl)
@@ -34,39 +38,6 @@ def print_strongest_teams():
                                  key=lambda a: a[1],
                                  reverse=True)[:100]:
         print '{} {:.0f}'.format(team, strength*10000)
-
-
-def known_game_features(game):
-    features = [
-        game.points,
-        game.field_goals,
-        game.field_goal_attempts,
-        game.three_points,
-        game.three_point_attempts,
-        game.free_throws,
-        game.free_throw_attempts,
-        game.offensive_rebounds,
-        game.rebounds,
-        game.assists,
-        game.steals,
-        game.blocks,
-        game.turnovers,
-        game.fouls,
-        game.opp.points,
-        game.opp.field_goals,
-        game.opp.field_goal_attempts,
-        game.opp.three_points,
-        game.opp.three_point_attempts,
-        game.opp.free_throws,
-        game.opp.free_throw_attempts,
-        game.opp.offensive_rebounds,
-        game.opp.rebounds,
-        game.opp.assists,
-        game.opp.steals,
-        game.opp.blocks,
-        game.opp.turnovers,
-        game.opp.fouls]
-    return features, game.result
 
 
 def game_features(game):
@@ -105,7 +76,8 @@ def game_features(game):
         .query(Game)
         .filter(Game.result == 'win',
                 Game.date < game.date,
-                Game.date > game.date - datetime.timedelta(days=30*6)))
+                Game.date > game.date - datetime.timedelta(days=30*6))
+        .options(joinedload(Game.opp)))
     ts = team_strength(
         (g.team, g.opponent, 3 + min(5, g.points - g.opp.points))
         for g in all_past_games)
@@ -148,7 +120,8 @@ def predict(team, opponent, date=None):
         .one())
     ts = team_strength(
         (g.team, g.opponent, 3 + min(5, g.points - g.opp.points))
-         for g in all_past_games.filter(Game.result == 'win'))
+         for g in all_past_games.filter(Game.result == 'win')
+                  .options(joinedload(Game.opp)))
     our_strength = ts[game.team] * 10000
     their_strength = ts[game.opponent] * 10000
     this_game_features = tuple(itertools.chain(
