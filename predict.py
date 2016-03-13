@@ -11,6 +11,23 @@ import networkx as nx
 from database import Game, new_session
 
 
+feature_columns = (
+    func.coalesce(func.avg(Game.points), 0),
+    func.coalesce(func.avg(Game.field_goals), 0),
+    func.coalesce(func.avg(Game.field_goal_attempts), 0),
+    func.coalesce(func.avg(Game.three_points), 0),
+    func.coalesce(func.avg(Game.three_point_attempts), 0),
+    func.coalesce(func.avg(Game.free_throws), 0),
+    func.coalesce(func.avg(Game.free_throw_attempts), 0),
+    func.coalesce(func.avg(Game.offensive_rebounds), 0),
+    func.coalesce(func.avg(Game.rebounds), 0),
+    func.coalesce(func.avg(Game.assists), 0),
+    func.coalesce(func.avg(Game.steals), 0),
+    func.coalesce(func.avg(Game.blocks), 0),
+    func.coalesce(func.avg(Game.turnovers), 0),
+    func.coalesce(func.avg(Game.fouls), 0))
+
+
 def team_strength(winner_losers):
     games_and_weights = defaultdict(int)
     for winner, loser, weight in winner_losers:
@@ -41,32 +58,17 @@ def print_strongest_teams():
 
 
 def game_features(game):
-    features = (
-        func.coalesce(func.avg(Game.points), 0),
-        func.coalesce(func.avg(Game.field_goals), 0),
-        func.coalesce(func.avg(Game.field_goal_attempts), 0),
-        func.coalesce(func.avg(Game.three_points), 0),
-        func.coalesce(func.avg(Game.three_point_attempts), 0),
-        func.coalesce(func.avg(Game.free_throws), 0),
-        func.coalesce(func.avg(Game.free_throw_attempts), 0),
-        func.coalesce(func.avg(Game.offensive_rebounds), 0),
-        func.coalesce(func.avg(Game.rebounds), 0),
-        func.coalesce(func.avg(Game.assists), 0),
-        func.coalesce(func.avg(Game.steals), 0),
-        func.coalesce(func.avg(Game.blocks), 0),
-        func.coalesce(func.avg(Game.turnovers), 0),
-        func.coalesce(func.avg(Game.fouls), 0))
     session = new_session()
     team_stats = (
         session
-        .query(*features)
+        .query(*feature_columns)
         .filter(Game.team == game.team,
                 Game.date < game.date,
                 Game.date > game.date - datetime.timedelta(days=30*6))
         .one())
     opponent_stats = (
         session
-        .query(*features)
+        .query(*feature_columns)
         .filter(Game.team == game.opponent,
                 Game.date < game.date,
                 Game.date > game.date - datetime.timedelta(days=30*6))
@@ -100,20 +102,20 @@ def predict(team, opponent, date=None):
         session
         .query(Game)
         .filter(Game.date < date,
-                Game.date > date - datetime.timedelta(days=30*6))
-        .all())
-    features = [game_features(g) for g in tqdm(all_past_games)]
-    targets = [g.result for g in all_past_games]
+                Game.date > date - datetime.timedelta(days=30*6)))
+    recent_games = all_past_games.order_by(Game.date.desc()).limit(1000).all()
+    features = [game_features(g) for g in tqdm(recent_games)]
+    targets = [g.result for g in recent_games]
     team_stats = (
         session
-        .query(*features)
+        .query(*feature_columns)
         .filter(Game.team == team,
                 Game.date < date,
                 Game.date > date - datetime.timedelta(days=30*6))
         .one())
     opponent_stats = (
         session
-        .query(*features)
+        .query(*feature_columns)
         .filter(Game.team == opponent,
                 Game.date < date,
                 Game.date > date - datetime.timedelta(days=30*6))
@@ -122,8 +124,8 @@ def predict(team, opponent, date=None):
         (g.team, g.opponent, 3 + min(5, g.points - g.opp.points))
          for g in all_past_games.filter(Game.result == 'win')
                   .options(joinedload(Game.opp)))
-    our_strength = ts[game.team] * 10000
-    their_strength = ts[game.opponent] * 10000
+    our_strength = ts[team] * 10000
+    their_strength = ts[opponent] * 10000
     this_game_features = tuple(itertools.chain(
         (float(i) for i in team_stats),
         (float(i) for i in opponent_stats),
@@ -131,4 +133,6 @@ def predict(team, opponent, date=None):
         [our_strength, their_strength, our_strength - their_strength]))
     c = RFC()
     c.fit(features, targets)
-    return c.predict_proba([this_game_features])
+    return {k: v for k, v in
+            zip(c.classes_.tolist(),
+                c.predict_proba([this_game_features]).tolist()[0])}
