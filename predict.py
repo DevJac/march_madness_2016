@@ -131,7 +131,7 @@ def predict(team, opponent, date=None):
         (float(i) for i in opponent_stats),
         (float(a) - float(b) for a, b in zip(team_stats, opponent_stats)),
         [our_strength, their_strength, our_strength - their_strength]))
-    c = RFC()
+    c = RFC(100)
     c.fit(features, targets)
     return {k: v for k, v in
             zip(c.classes_.tolist(),
