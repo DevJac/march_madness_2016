@@ -44,6 +44,7 @@ class Game(Base):
         'Game',
         uselist=False,
         lazy='joined',
+        join_depth=1,
         primaryjoin=and_(
             foreign(team) == remote(opponent),
             foreign(opponent) == remote(team),
