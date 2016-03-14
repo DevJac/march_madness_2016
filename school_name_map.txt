@@ -349,7 +349,6 @@ texas-southern Texas Southern
 central-connecticut-state Central Connecticut
 thiel Thiel
 earlham-in Earlham (IN)
-alabama-huntsville Alabama-Huntsville
 carroll Carroll
 purdue-calumet Purdue Calumet
 saint-marys-ca Saint Mary's (CA)
@@ -757,7 +756,6 @@ blue-mountain-college Blue Mountain College
 fairfield Fairfield
 baptist-bible-pa Baptist Bible (PA)
 arkansas Arkansas
-flagler Flagler
 george-washington George Washington
 trinity-tx Trinity (TX)
 cincinnati-clermont Cincinnati-Clermont
@@ -784,7 +782,7 @@ evergreen-state Evergreen State
 pensacola-christian Pensacola Christian
 greensboro Greensboro
 washington-adventist Washington Adventist
-university-sciences University of the Sciences (Pa.)
+northwest-oklahoma-state Northwest Oklahoma State
 dakota-state Dakota State
 rio-grande Rio Grande
 william-mary William & Mary
@@ -810,7 +808,6 @@ siena Siena
 nevada-las-vegas UNLV
 nova-southeastern Nova Southeastern
 southern-utah Southern Utah
-northwest-oklahoma-state Northwest Oklahoma State
 massachusetts-lowell UMass-Lowell
 presentation Presentation
 manhattan Manhattan
