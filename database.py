@@ -5,10 +5,12 @@ from datetime import datetime, timedelta
 from tqdm import tqdm
 import pandas as pd
 from sqlalchemy import Column as SQAColumn, and_
-from sqlalchemy import create_engine, Integer, String, Date, Enum
+from sqlalchemy import (create_engine, Integer, String, Date, Enum, Float,
+                        ForeignKey, Table)
 from sqlalchemy.orm import sessionmaker, relationship, remote, foreign
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.exc import DataError, IntegrityError
+import predict
 
 
 def Column(*args, **kwargs):
@@ -19,13 +21,16 @@ def Column(*args, **kwargs):
 Base = declarative_base()
 
 
+win_loss_enum = Enum('win', 'loss', name='win_loss')
+
+
 class Game(Base):
     __tablename__ = 'game'
 
     team = Column(String, primary_key=True, index=True)
     opponent = Column(String, primary_key=True, index=True)
     date = Column(Date, primary_key=True, index=True)
-    result = Column(Enum('win', 'loss', name='win_loss'), index=True)
+    result = Column(win_loss_enum, index=True)
     points = Column(Integer)
     field_goals = Column(Integer)
     field_goal_attempts = Column(Integer)
@@ -47,6 +52,17 @@ class Game(Base):
             foreign(team) == remote(opponent),
             foreign(opponent) == remote(team),
             foreign(date) == remote(date)))
+
+
+features_table_args = ['game_features',
+                       Base.metadata,
+                       Column('team', String),
+                       Column('opponent', String),
+                       Column('date', Date),
+                       Column('result', win_loss_enum)]
+features_table_args.extend(
+    Column('f' + str(n), Float) for n in xrange(1, 45+1))
+features_table = Table(*features_table_args)
 
 
 engine = create_engine('postgresql://buttons:buttons@localhost/ncaa')
@@ -88,7 +104,8 @@ def load_data():
                              fouls=row.PF))
             try:
                 session.commit()
-            except (DataError, IntegrityError):
+            except (DataError, IntegrityError) as e:
+                print e
                 session.rollback()
     bad_count = 0
     total_games = session.query(Game).count()
@@ -100,6 +117,11 @@ def load_data():
             session.delete(game)
     session.commit()
     print '{:,d} / {:,d} bad games'.format(bad_count, total_games)
+    for g in tqdm(session.query(Game).all()):
+        features_table_args = [g.team, g.opponent, g.date, g.result]
+        features_table_args.extend(predict.game_features(g))
+        session.execute(features_table.insert().values(features_table_args))
+        session.commit()
 
 
 if __name__ == '__main__':
