@@ -6,9 +6,9 @@ from datetime import date
 from tqdm import tqdm
 from sklearn.ensemble import RandomForestClassifier as RFC
 from sqlalchemy.orm import joinedload
-from sqlalchemy import func
+from sqlalchemy import func, select, and_
 import networkx as nx
-from database import Game, new_session
+from database import Game, new_session, features_table
 
 
 feature_columns = (
@@ -91,21 +91,37 @@ def game_features(game):
         [float(a) - float(b) for a, b in zip(team_stats, opponent_stats)],
         [our_strength, their_strength, our_strength - their_strength]))
 
+
+def cached_features(session, game):
+    feature_columns = [getattr(features_table.c, 'f'+str(n))
+                       for n in xrange(1, 45+1)]
+    query = select(feature_columns).where(and_(
+        features_table.c.team == game.team,
+        features_table.c.opponent == game.opponent,
+        features_table.c.date == game.date))
+    return session.execute(query).fetchone()
+
+
+_cache = {}
+
+
 def predict(team, opponent, date=None):
     date = date or datetime.date.today()
     session = new_session()
     all_teams = [i[0] for i in session.query(func.distinct(Game.team))]
     team = difflib.get_close_matches(team, all_teams)[0]
     opponent = difflib.get_close_matches(opponent, all_teams)[0]
-    print '{} vs {}'.format(team, opponent)
+    print '{} > {}'.format(team, opponent)
     all_past_games = (
         session
         .query(Game)
-        .filter(Game.date < date,
-                Game.date > date - datetime.timedelta(days=30*6)))
-    recent_games = all_past_games.order_by(Game.date.desc()).limit(1000).all()
-    features = [game_features(g) for g in tqdm(recent_games)]
-    targets = [g.result for g in recent_games]
+        .filter(Game.date < date))
+    if 'features' not in _cache:
+        training_games = all_past_games.all()
+        _cache['features'] = [
+            cached_features(session, g) for g in tqdm(training_games)]
+        _cache['targets'] = [
+            g.result for g in training_games]
     team_stats = (
         session
         .query(*feature_columns)
@@ -132,7 +148,8 @@ def predict(team, opponent, date=None):
         (float(a) - float(b) for a, b in zip(team_stats, opponent_stats)),
         [our_strength, their_strength, our_strength - their_strength]))
     c = RFC(100)
-    c.fit(features, targets)
-    return {k: v for k, v in
-            zip(c.classes_.tolist(),
-                c.predict_proba([this_game_features]).tolist()[0])}
+    c.fit(_cache['features'], _cache['targets'])
+    result = {k: v for k, v in
+              zip(c.classes_.tolist(),
+                  c.predict_proba([this_game_features]).tolist()[0])}
+    return result['win']
