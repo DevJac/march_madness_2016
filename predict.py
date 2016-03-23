@@ -147,9 +147,11 @@ def predict(team, opponent, date=None):
         (float(i) for i in opponent_stats),
         (float(a) - float(b) for a, b in zip(team_stats, opponent_stats)),
         [our_strength, their_strength, our_strength - their_strength]))
-    c = RFC(100)
+    c = RFC(20)
     c.fit(_cache['features'], _cache['targets'])
     result = {k: v for k, v in
               zip(c.classes_.tolist(),
                   c.predict_proba([this_game_features]).tolist()[0])}
-    return result['win']
+    if result['win'] >= .5:
+        return '{} will win {:.0%}'.format(team, result['win'])
+    return '{} will win {:.0%}'.format(opponent, result['loss'])
